@@ -18,19 +18,38 @@ body {
   .image-content {
     display: flex;
     justify-content: center;
+
     width: 200px;
     height: 600px;
-    transition: 0.2s;
+    transition: 0.3s;
     overflow: hidden;
     filter: brightness(30%);
     cursor: pointer;
+    position: relative;
+
+    &:hover {
+      width: 500px;
+      filter: brightness(100%);
+
+      .title {
+        z-index: 1;
+        left: 0;
+      }
+    }
 
     .image {
       height: 100%;
     }
-    &:hover {
-      width: 500px;
-      filter: brightness(100%);
+    .title {
+      position: absolute;
+      color: white;
+      font-size: 2em;
+      z-index: -1;
+      padding: 2rem 0;
+      bottom: 0;
+      margin: 0 auto;
+      padding-left: 10px;
+      white-space: nowrap;
     }
   }
 }
