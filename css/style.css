@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Manjari", sans-serif;
 }
 
 body {
@@ -18,12 +20,12 @@ body {
 #container .image-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 200px;
   height: 600px;
-  transition: 0.2s;
+  transition: 0.5s;
   overflow: hidden;
   filter: brightness(30%);
-  cursor: pointer;
   position: relative;
 }
 #container .image-content:hover {
@@ -33,6 +35,7 @@ body {
 #container .image-content:hover .title {
   z-index: 1;
   left: 0;
+  transition: 1s;
 }
 #container .image-content .image {
   height: 100%;
@@ -45,8 +48,17 @@ body {
   padding: 2rem 0;
   bottom: 0;
   margin: 0 auto;
-  padding-left: 10px;
+  padding-left: 2rem;
   white-space: nowrap;
+  letter-spacing: 3px;
+}
+#container .image-content .titan-bestia__info {
+  position: absolute;
+  text-align: center;
+  padding: 0 1rem;
+  color: white;
+  z-index: -1;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
