@@ -1,25 +1,47 @@
 const images = document.querySelectorAll('.image');
+const imageContent = document.querySelectorAll('.image-content');
 const titleBestia = document.querySelector('.title-bestia');
-const titleBestiaInfo = document.querySelector('.titan-bestia__info');
+const titanBestiaInfo = document.querySelector('.titan-bestia__info');
 const titleAcorazado = document.querySelector('.title-acorazado');
+const titanAcorazadoInfo = document.querySelector('.titan-acorazado__info');
+
+let activatorBestia = true;
+let activatorAcorazado = true;
 
 images.forEach((image) => {
   image.addEventListener('click', (imageEvent) => {
     imageEvent.target.style.filter = 'brightness(20%)';
     imageEvent.target.style.transition = '1s';
 
-    if (imageEvent.target.classList[1] === 'titan-bestia') {
-      titleBestia.style.bottom = '360px';
+    if (imageEvent.target.classList[1] === 'titan-bestia' && activatorBestia) {
+      titleBestia.style.bottom = '340px';
       titleBestia.style.fontSize = '1.3rem';
-      titleBestiaInfo.style.transition = '1s';
-      titleBestiaInfo.style.transitionDelay = '0.6s';
-      titleBestiaInfo.style.zIndex = '1';
-      titleBestiaInfo.style.opacity = '1';
-    }
+      titanBestiaInfo.style.transition = '1s';
+      titanBestiaInfo.style.transitionDelay = '0.7s';
+      titanBestiaInfo.style.zIndex = '1';
+      titanBestiaInfo.style.opacity = '1';
 
-    if (imageEvent.target.classList[1] === 'titan-acorazado') {
-      titleAcorazado.style.bottom = '300px';
-      titleAcorazado.style.fontSize = '1.3rem';
+      activatorBestia = false;
+    } else {
+      imageEvent.target.style.filter = 'brightness(100%)';
+      titleBestia.style.bottom = '0px';
+      titleBestia.style.fontSize = '2rem';
+      titanBestiaInfo.style.zIndex = '-1';
+      titanBestiaInfo.style.transition = '0.2s';
+      titanBestiaInfo.style.opacity = '0';
+
+      activatorBestia = true;
     }
+  });
+
+  image.addEventListener('mouseover', (imagecos) => {
+    imagecos.target.style.filter = 'brightness(100%)';
+    titleBestia.style.fontSize = '2rem';
+    titleBestia.style.bottom = '0px';
+    titanBestiaInfo.style.transition = '0.2s';
+    titanBestiaInfo.style.zIndex = '-1';
+    titanBestiaInfo.style.opacity = '0';
+
+    activatorBestia = true;
   });
 });
