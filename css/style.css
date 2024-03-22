@@ -33,9 +33,9 @@ body {
   filter: brightness(100%);
 }
 #container .image-content:hover .title {
+  transition: 1s;
   z-index: 1;
   left: 0;
-  transition: 1s;
 }
 #container .image-content .image {
   height: 100%;
@@ -53,6 +53,14 @@ body {
   letter-spacing: 3px;
 }
 #container .image-content .titan-bestia__info {
+  position: absolute;
+  text-align: center;
+  padding: 0 1rem;
+  color: white;
+  z-index: -1;
+  opacity: 0;
+}
+#container .image-content .titan-acorazado__info {
   position: absolute;
   text-align: center;
   padding: 0 1rem;
