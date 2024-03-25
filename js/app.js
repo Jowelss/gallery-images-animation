@@ -1,4 +1,5 @@
 const images = document.querySelectorAll('.image');
+const imageContent = document.querySelectorAll('.image-content');
 const titleBestia = document.querySelector('.title-bestia');
 const titanBestiaInfo = document.querySelector('.titan-bestia__info');
 const titleAcorazado = document.querySelector('.title-acorazado');
@@ -31,15 +32,11 @@ images.forEach((image) => {
 
       activatorBestia = true;
     }
-  });
 
-  image.addEventListener('mouseout', () => {
-    titleBestia.style.fontSize = '2rem';
-    titleBestia.style.bottom = '0px';
-    titanBestiaInfo.style.transition = '0.2s';
-    titanBestiaInfo.style.zIndex = '-1';
-    titanBestiaInfo.style.opacity = '1';
-
-    activatorBestia = true;
+    image.addEventListener('mouseover', () => {
+      titanBestiaInfo.style.transition = '0.2s';
+      titanBestiaInfo.style.zIndex = '-1';
+      titanBestiaInfo.style.opacity = '0';
+    });
   });
 });
