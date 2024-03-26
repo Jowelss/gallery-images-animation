@@ -11,13 +11,12 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #0f0f0f;
 }
 
 #container {
   display: flex;
 }
-#container .image-content {
+#container .titan-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,22 +24,13 @@ body {
   height: 600px;
   transition: 0.5s;
   overflow: hidden;
-  filter: brightness(30%);
+  filter: brightness(20%);
   position: relative;
 }
-#container .image-content:hover {
-  width: 500px;
-  filter: brightness(100%);
-}
-#container .image-content:hover .title {
-  transition: 1s;
-  z-index: 1;
-  left: 0;
-}
-#container .image-content .image {
+#container .titan-content .image {
   height: 100%;
 }
-#container .image-content .title {
+#container .titan-content .title {
   position: absolute;
   color: white;
   font-size: 2em;
@@ -54,22 +44,14 @@ body {
   user-select: none;
   pointer-events: none;
 }
-#container .image-content .titan-bestia__info {
+#container .titan-content .info {
   position: absolute;
   text-align: center;
   padding: 0 1rem;
   color: white;
-  z-index: -1;
+  z-index: 0;
   opacity: 0;
   pointer-events: none;
-}
-#container .image-content .titan-acorazado__info {
-  position: absolute;
-  text-align: center;
-  padding: 0 1rem;
-  color: white;
-  z-index: -1;
-  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
