@@ -1,10 +1,16 @@
 const template = document.getElementById('template');
 const titanContent = document.querySelectorAll('.titan-content');
 
-const almacen = [{ id: '' }];
-
-for (const elementos of almacen) {
+const hijos = (id) => {
   const copyTemplate = document.importNode(template.content, true);
-}
-
-//Olvide casi todo!!!! 27/03/2002 si o si debo acabar esto
+  const hijos = copyTemplate.querySelectorAll('*');
+  for (const hijo of hijos) {
+    console.log(hijo);
+  }
+};
+hijos();
+// for (const iterator of titanContent) {
+//   iterator.addEventListener('click', (e) => {
+//     hijos(e.currentTarget.id);
+//   });
+// }
