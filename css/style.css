@@ -24,7 +24,6 @@ body {
   height: 600px;
   transition: 0.5s;
   overflow: hidden;
-  filter: brightness(20%);
   position: relative;
 }
 #container .titan-content .image {

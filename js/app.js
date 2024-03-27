@@ -2,15 +2,18 @@ const template = document.getElementById('template');
 const titanContent = document.querySelectorAll('.titan-content');
 
 const hijos = (id) => {
-  const copyTemplate = document.importNode(template.content, true);
-  const hijos = copyTemplate.querySelectorAll('*');
-  for (const hijo of hijos) {
-    console.log(hijo);
-  }
+  // for (const hijo of hijos) {
+  //   hijo.id = id;
+  //   if (id === hijo.id) {
+  //   }
+  // }
 };
-hijos();
-// for (const iterator of titanContent) {
-//   iterator.addEventListener('click', (e) => {
-//     hijos(e.currentTarget.id);
-//   });
-// }
+
+for (const iterator of titanContent) {
+  iterator.addEventListener('click', (e) => {
+    const copyTemplate = document.importNode(template.content, true);
+    const hijos = copyTemplate.querySelectorAll('*');
+
+    // hijos(e.currentTarget.id);
+  });
+}
