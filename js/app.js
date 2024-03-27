@@ -1,9 +1,10 @@
 const template = document.getElementById('template');
 const titanContent = document.querySelectorAll('.titan-content');
 
-for (const elemento of titanContent) {
-  elemento.addEventListener('click', () => {
-    const copyTemplate = document.importNode(template.content, true);
-    console.log(copyTemplate.textContent);
-  });
+const almacen = [{ id: '' }];
+
+for (const elementos of almacen) {
+  const copyTemplate = document.importNode(template.content, true);
 }
+
+//Olvide casi todo!!!! 27/03/2002 si o si debo acabar esto
