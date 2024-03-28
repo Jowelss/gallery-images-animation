@@ -1,19 +1,20 @@
 const template = document.getElementById('template');
 const titanContent = document.querySelectorAll('.titan-content');
 
-const hijos = (id) => {
-  // for (const hijo of hijos) {
-  //   hijo.id = id;
-  //   if (id === hijo.id) {
-  //   }
-  // }
+const coso = () => {
+  const copyTemplate = document.importNode(template.content, true);
+
+  for (const item of copyTemplate.children) {
+    const almacen = {
+      id: item.id,
+    };
+    if (almacen.id === 'titan-bestia') {
+      console.log(almacen.id);
+    } else {
+    }
+  }
 };
 
-for (const iterator of titanContent) {
-  iterator.addEventListener('click', (e) => {
-    const copyTemplate = document.importNode(template.content, true);
-    const hijos = copyTemplate.querySelectorAll('*');
-
-    // hijos(e.currentTarget.id);
-  });
+for (const element of titanContent) {
+  element.addEventListener('click', coso);
 }
