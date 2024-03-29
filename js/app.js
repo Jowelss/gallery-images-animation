@@ -1,20 +1,11 @@
 const template = document.getElementById('template');
 const titanContent = document.querySelectorAll('.titan-content');
 
-const coso = () => {
-  const copyTemplate = document.importNode(template.content, true);
+const store = [];
 
-  for (const item of copyTemplate.children) {
-    const almacen = {
-      id: item.id,
-    };
-    if (almacen.id === 'titan-bestia') {
-      console.log(almacen.id);
-    } else {
-    }
+const getData = () => {
+  const copyTemplate = document.importNode(template.content, true);
+  for (const elemento of copyTemplate.children) {
+    store.push({ id: elemento.id });
   }
 };
-
-for (const element of titanContent) {
-  element.addEventListener('click', coso);
-}
