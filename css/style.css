@@ -24,7 +24,21 @@ body {
   height: 600px;
   transition: 0.5s;
   overflow: hidden;
+  filter: brightness(20%);
   position: relative;
+}
+#container .titan-content:hover {
+  width: 500px;
+  filter: brightness(100%);
+}
+#container .titan-content:hover .title {
+  transition: 1s;
+  z-index: 1;
+  left: 0;
+}
+#container .titan-content:hover .info {
+  z-index: 1;
+  opacity: 1;
 }
 #container .titan-content .image {
   height: 100%;
@@ -48,9 +62,10 @@ body {
   text-align: center;
   padding: 0 1rem;
   color: white;
-  z-index: 1;
-  opacity: 1;
+  z-index: 0;
+  opacity: 0;
   pointer-events: none;
+  transition: 0.9s;
 }
 
 /*# sourceMappingURL=style.css.map */
