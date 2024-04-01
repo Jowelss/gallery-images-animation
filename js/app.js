@@ -5,21 +5,23 @@ const fragment = document.createDocumentFragment();
 const getData = (labels) => {
   const copyTemplate = document.importNode(template.content, true);
   const element = copyTemplate.querySelectorAll('.info');
-  for (let i = 0; i < element.length; i++) {
-    if (labels.id === element[i].id) {
-      const coso = element[i];
-      labels.appendChild(coso);
-      if (coso > 2) {
-        coso.remove('id');
-      }
+  for (const child of element) {
+    console.log(child);
+    if (labels.id === child.id) {
+      fragment.appendChild(child);
+      labels.appendChild(fragment);
+
+      return;
     }
   }
 };
 
 for (const label of titanContent) {
   label.addEventListener('click', (e) => {
-    const child = e.currentTarget.lastElementChild;
-    child.style.bottom = '360px';
+    const childTitle = e.currentTarget.children[1];
+
+    childTitle.style.bottom = '360px';
+
     return getData(e.currentTarget);
   });
 }
