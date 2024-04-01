@@ -22,7 +22,7 @@ body {
   align-items: center;
   width: 200px;
   height: 600px;
-  transition: 0.5s;
+  transition: 0.4s;
   overflow: hidden;
   filter: brightness(20%);
   position: relative;
@@ -48,10 +48,9 @@ body {
   color: white;
   font-size: 2em;
   z-index: -1;
-  padding: 2rem 0;
+  padding: 2rem 0 0 2rem;
   bottom: 0;
   margin: 0 auto;
-  padding-left: 2rem;
   white-space: nowrap;
   letter-spacing: 3px;
   user-select: none;
@@ -62,10 +61,9 @@ body {
   text-align: center;
   padding: 0 1rem;
   color: white;
-  z-index: 0;
+  z-index: -1;
   opacity: 0;
   pointer-events: none;
-  transition: 0.9s;
 }
 
 /*# sourceMappingURL=style.css.map */
