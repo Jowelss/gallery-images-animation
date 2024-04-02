@@ -6,12 +6,11 @@ const getData = (labels) => {
   const copyTemplate = document.importNode(template.content, true);
   const element = copyTemplate.querySelectorAll('.info');
   for (const child of element) {
-    console.log(child);
-    if (labels.id === child.id) {
+    if (labels.children[2]) {
+      console.log('nashe');
+    } else if (labels.id === child.id) {
       fragment.appendChild(child);
       labels.appendChild(fragment);
-
-      return;
     }
   }
 };
