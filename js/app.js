@@ -5,12 +5,15 @@ const fragment = document.createDocumentFragment();
 const getData = (labels) => {
   const copyTemplate = document.importNode(template.content, true);
   const element = copyTemplate.querySelectorAll('.info');
+
   for (const child of element) {
     if (labels.children[2]) {
-      console.log('nashe');
+      const coso = labels.removeChild(labels.children[2]);
     } else if (labels.id === child.id) {
       fragment.appendChild(child);
       labels.appendChild(fragment);
+
+      return;
     }
   }
 };
