@@ -8,18 +8,21 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   min-height: 100vh;
-  background-color: #0f0f0f;
+  background-color: rgb(26, 26, 27);
+  padding: 1rem;
 }
 
-#container {
+.container {
   display: flex;
-  border-radius: 10px;
+  gap: 10px;
   overflow: hidden;
 }
-#container .titan-content {
+.container .titan-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,28 +30,30 @@ body {
   height: 600px;
   transition: 0.4s;
   overflow: hidden;
-  filter: brightness(20%);
+  border-radius: 10px;
   position: relative;
+  transition: 0.5s;
+  filter: brightness(30%);
+  cursor: pointer;
 }
-#container .titan-content:hover {
+.container .titan-content:hover {
   width: 500px;
   filter: brightness(100%);
 }
-#container .titan-content:hover .title {
+.container .titan-content:hover .title {
   z-index: 1;
   left: 0;
-  transition: 0.5s;
 }
-#container .titan-content:hover .info {
+.container .titan-content:hover .info {
   width: 500px;
   z-index: 1;
   opacity: 1;
+}
+.container .titan-content .image {
+  height: 100%;
   transition: 0.5s;
 }
-#container .titan-content .image {
-  height: 100%;
-}
-#container .titan-content .title {
+.container .titan-content .title {
   color: white;
   position: absolute;
   font-size: 2em;
@@ -80,7 +85,7 @@ body {
     transform: translateY(0px);
   }
 }
-#container .titan-content .info {
+.container .titan-content .info {
   position: absolute;
   text-align: center;
   padding: 0 1rem;
@@ -90,8 +95,9 @@ body {
   pointer-events: none;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
-@keyframes transitionInfo {
+@keyframes transitionInfoTop {
   0% {
     color: transparent;
     transform: translateY(300px);
@@ -100,8 +106,15 @@ body {
     color: transparent;
   }
   100% {
-    color: #c7c4c4;
     transform: translateY(0px);
+  }
+}
+@keyframes transitionInfoBottom {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(200px);
   }
 }
 
