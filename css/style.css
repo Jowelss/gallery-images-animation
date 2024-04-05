@@ -35,20 +35,22 @@ body {
   filter: brightness(100%);
 }
 #container .titan-content:hover .title {
-  transition: 0.7s;
   z-index: 1;
   left: 0;
+  transition: 0.5s;
 }
 #container .titan-content:hover .info {
+  width: 500px;
   z-index: 1;
   opacity: 1;
+  transition: 0.5s;
 }
 #container .titan-content .image {
   height: 100%;
 }
 #container .titan-content .title {
-  position: absolute;
   color: white;
+  position: absolute;
   font-size: 2em;
   z-index: -1;
   padding: 2rem 0 2rem 2rem;
@@ -58,17 +60,24 @@ body {
   letter-spacing: 3px;
   user-select: none;
   pointer-events: none;
-  animation-name: transition;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-@keyframes transitionTitle {
+@keyframes moveTitleTop {
   0% {
     transform: translateY(0px);
   }
   100% {
     transform: translateY(-350px);
+  }
+}
+@keyframes moveTitleBottom {
+  0% {
+    transform: translateY(-350px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 #container .titan-content .info {
@@ -79,11 +88,10 @@ body {
   z-index: -1;
   opacity: 0;
   pointer-events: none;
-  animation-name: transition;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
 }
-@keyframes transition {
+@keyframes transitionInfo {
   0% {
     color: transparent;
     transform: translateY(300px);
@@ -92,7 +100,7 @@ body {
     color: transparent;
   }
   100% {
-    color: #fff;
+    color: #c7c4c4;
     transform: translateY(0px);
   }
 }
