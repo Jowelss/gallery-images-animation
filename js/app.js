@@ -5,25 +5,42 @@ const fragment = document.createDocumentFragment();
 const getData = (labels) => {
   const copyTemplate = document.importNode(template.content, true);
   const element = copyTemplate.querySelectorAll('.info');
+
   for (const child of element) {
     if (labels.children[2]) {
-      child.style.animationName = 'transitionInfoTwo';
+      labels.children[0].style.filter = 'brightness(100%)';
+      labels.children[2].style.animationName = 'transitionInfoBottom';
+      labels.children[2].style.transition = '0.1s';
+      labels.children[2].style.opacity = '0';
 
-      labels.removeChild(labels.children[2]);
+      setTimeout(() => {
+        labels.removeChild(labels.children[2]);
+      }, 100);
+
       return;
     } else if (labels.id === child.id) {
-      child.style.animationName = 'transitionInfo';
+      child.style.animationName = 'transitionInfoTop';
+      labels.children[0].style.filter = 'brightness(20%)';
+
       fragment.appendChild(child);
       labels.appendChild(fragment);
+
       return;
     }
   }
 };
-let activador = true;
 for (const label of titanContent) {
+  let activador = true;
+
   label.addEventListener('click', (e) => {
     const childTitle = e.currentTarget.children[1];
-    //Hacer el efecto de subir y bajar el title, el operador ternario no funciona, probar con ifelse creo que así si funcionaba
+
+    childTitle.style.animationName = activador
+      ? 'moveTitleTop'
+      : 'moveTitleBottom';
+
+    activador = !activador;
+
     return getData(e.currentTarget);
   });
 }
