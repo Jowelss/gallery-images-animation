@@ -7,22 +7,23 @@ const getData = (labels) => {
   const element = copyTemplate.querySelectorAll('.info');
   for (const child of element) {
     if (labels.children[2]) {
+      child.style.animationName = 'transitionInfoTwo';
+
       labels.removeChild(labels.children[2]);
       return;
     } else if (labels.id === child.id) {
+      child.style.animationName = 'transitionInfo';
       fragment.appendChild(child);
       labels.appendChild(fragment);
       return;
     }
   }
 };
-
+let activador = true;
 for (const label of titanContent) {
   label.addEventListener('click', (e) => {
     const childTitle = e.currentTarget.children[1];
-
-    childTitle.style.animationName = 'transitionTitle';
-
+    //Hacer el efecto de subir y bajar el title, el operador ternario no funciona, probar con ifelse creo que así si funcionaba
     return getData(e.currentTarget);
   });
 }
