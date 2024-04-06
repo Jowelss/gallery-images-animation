@@ -12,24 +12,42 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  min-height: 100vh;
-  padding: 1rem;
+  padding: 1rem 0 0;
+  background: linear-gradient(0.25turn, rgb(161, 51, 0), #080808, rgb(161, 51, 0));
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  width: 220px;
+  top: 0;
+  left: 0;
+}
+
+.title-principal {
+  font-size: 2.5em;
+  margin: 2rem 0;
+  font-weight: 900;
+  letter-spacing: 5px;
+  background: -webkit-linear-gradient(1deg, #000 12%, rgb(202, 64, 0), #000);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {
   display: flex;
-  gap: 10px;
   overflow: hidden;
+  box-shadow: 0 0 10px -4px #000;
+  border-radius: 10px;
 }
 .container .titan-content {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 600px;
+  height: 500px;
   transition: 0.4s;
   overflow: hidden;
-  border-radius: 10px;
   position: relative;
   transition: 0.5s;
   filter: brightness(30%);
@@ -54,6 +72,7 @@ body {
 }
 .container .titan-content .title {
   color: white;
+  font-weight: 400;
   position: absolute;
   font-size: 2em;
   z-index: -1;
@@ -74,6 +93,9 @@ body {
   }
   100% {
     transform: translateY(-350px);
+    background: -webkit-linear-gradient(1deg, #000, rgb(202, 64, 0) 50%, #000);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 @keyframes moveTitleBottom {
@@ -89,6 +111,7 @@ body {
   text-align: center;
   padding: 0 1rem;
   color: white;
+  font-weight: 100;
   z-index: -1;
   opacity: 0;
   pointer-events: none;
